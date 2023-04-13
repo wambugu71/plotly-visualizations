@@ -1,0 +1,17 @@
+name: tf2c
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python >=3.5
+  - pip:
+    - plotly
+    - dash
+    - sklearn
+    - scikit-learn
+    - pandas 
+    - numpy
+    - matplotlib
+    - statsmodels
+    - scipy
+    
