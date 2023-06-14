@@ -3,4 +3,4 @@ dash
 streamlit
 scipy
 numpy
-sklearn
+scikit-learn
