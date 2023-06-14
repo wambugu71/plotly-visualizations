@@ -1,33 +1,11 @@
 import  plotly.express as  px 
 import  plotly.graph_objects as  go 
 import numpy as  np 
-import  scipy.stats as  ss
-import  streamlit as  st
-from sklearn.preprocessing import  StandardScaler 
+import  streamlit as  st 
 from sklearn.linear_model import  LinearRegression 
-from sklearn.linear_model import  LogisticRegression 
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.neighbors import  KNeighborsRegressor
 from sklearn.model_selection import  train_test_split
 from dash import html, Dash, Input, Output, dcc, callback, dash_table
 app = Dash(__name__)
-models = {
-    "Regression": LinearRegression, 
-    "Decision Tree": DecisionTreeRegressor, 
-    "KNN": KNeighborsRegressor
-}
-data = px.data.tips()
-app.layout = html.Div([
-    html.H1(children="Data with multiple  modelling  approaches"), 
-    dash_table.DataTable(data=data.to_dict("record"), page_size=10),
-    html.P("Select model:"), 
-    dcc.Dropdown(
-    id="dropdown", 
-    options=[i for  i in models],  
-    value= "Decision Tree"
-    ), 
-    dcc.Graph(figure={}, id="graph")
-])
 #creating  app callbacks
 df = px.data.tips()
 x = df.total_bill.values[:,None]
